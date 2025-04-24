@@ -43,4 +43,4 @@
     ```
 
 6. Access the API documentation:
-Open your browser and go to http://localhost:8000/docs to view the interactive API documentation provided by FastAPI.
+Open your browser and go to http://localhost:8080/docs to view the interactive API documentation provided by FastAPI.

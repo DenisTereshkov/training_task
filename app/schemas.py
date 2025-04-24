@@ -7,3 +7,4 @@ class UrlCreate(BaseModel):
 
 class UrlGet(UrlCreate):
     id: int
+    abbreviated_url: str

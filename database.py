@@ -20,6 +20,7 @@ class UrlOrm(Base):
     __tablename__ = 'urls'
     id: Mapped[int] = mapped_column(primary_key=True)
     url: Mapped[str] = mapped_column(unique=True)
+    abbreviated_url: Mapped[str]
 
 
 async def create_tables():

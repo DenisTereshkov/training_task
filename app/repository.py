@@ -1,8 +1,8 @@
 from database import SessionLocal, UrlOrm
 from sqlalchemy import select
-from pydantic import HttpUrl
 
 from .schemas import UrlCreate
+from .utils import get_abbreviated_url
 
 
 class UrlRepository:
@@ -13,8 +13,8 @@ class UrlRepository:
         """
         async with SessionLocal() as session:
             url_dict = data.model_dump()
-            if isinstance(url_dict.get("url"), HttpUrl):
-                url_dict["url"] = str(url_dict["url"])
+            url_dict['url'] = str(url_dict['url'])
+            url_dict['abbreviated_url'] = get_abbreviated_url(url_dict['url'])
             url = UrlOrm(**url_dict)
             session.add(url)
             await session.flush()

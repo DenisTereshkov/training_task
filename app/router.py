@@ -22,6 +22,7 @@ async def add_url(
         response = OrderedDict()
         response['id'] = shorten_url.id
         response['url'] = shorten_url.url
+        response['abbreviated_url'] = shorten_url.abbreviated_url
         return response
     except IntegrityError:
         raise HTTPException(
